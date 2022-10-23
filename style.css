@@ -1,0 +1,46 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d60000;
+}
+.main-container h1 {
+  color: green;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  text-align: center;
+}
+.main-container .main-section {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+}
+.main-container .main-section article {
+  color: blue;
+  border: 1px solid green;
+  font-size: 1rem;
+  padding: 5px;
+  text-align: center;
+}
+.main-container .main-section article:last-of-type {
+  border-left: none;
+}
+.main-container .main-section article:first-of-type {
+  border-right: none;
+}
+.main-container .main-section article .text-red {
+  color: red;
+}
+.main-container .main-section article:nth-child(2) {
+  border-right: none;
+}
+.main-container .footer-section {
+  color: green;
+  border: 1px solid blue;
+  font-size: 24px;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  margin: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

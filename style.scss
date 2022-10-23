@@ -1,0 +1,56 @@
+$color-primary: red;
+$secondary-color: green;
+$decor-color: blue;
+
+
+@mixin article-style($color, $border-color, $font-size: 1rem) {
+  color: $color;
+  border: 1px solid $border-color;
+  font-size: $font-size;
+  padding: 5px;
+  text-align: center;
+  @content;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid darken($color-primary, 8%);
+
+  h1 {
+    color: $secondary-color;
+    text-decoration: underline;
+    text-decoration-color: $decor-color;
+    text-align: center;
+  }
+
+  .main-section {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+
+    article {
+      @include article-style($decor-color, $secondary-color){
+      }
+      &:last-of-type{
+        border-left: none;
+      }
+      &:first-of-type{
+        border-right: none;
+      }
+      & .text-red{
+        color: $color-primary;
+      }
+      &:nth-child(2){
+        border-right: none;
+      }
+    }
+  }
+
+  .footer-section{
+    @include article-style($secondary-color, $decor-color, 24px){
+    display: block;
+    margin: 15px;
+    }
+  }
+}
